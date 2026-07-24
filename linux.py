@@ -53,3 +53,16 @@ while count <3:
     else :
         print(f"틀렸습니다. 정답은 \"{ans}\" 입니다.")
     count += 1
+
+    if score == 0 :
+        grade = "F"
+    elif score ==1 :
+        grade = "C"
+    elif score ==2 :
+        grade = "B"
+    elif score ==3 :
+        grade = "A"
+
+    print("퀴즈가 끝났습니다. 고생하셨습니다!")
+    print(f"총 3문제 중 \"{score}\"문제를 맞췄습니다")
+    print (f"{score}문제를 맞춰 당신은 \"{grade}\"등급 입니다.")
