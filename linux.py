@@ -69,5 +69,17 @@ while True:
     print(f"총 3문제 중 \"{score}\"문제를 맞췄습니다")
     print (f"{score}문제를 맞춰 당신은 \"{grade}\"등급 입니다.")
 
-    again = input("게임을 그만하시겠습니까?[yes or no] :").lower()
+    while True:
+        again = input("게임을 그만하시겠습니까?[yes or no] :").lower()
+        if again not in ["y", "n", "yes", "no"]:
+            print("'yes' or 'y' 또는 'no' or 'no' 만 입력할 수 있습니다. 다시 입력해 주세요.")
+        else:
+            break
+
+    if again not in ["n", "no"]:
+        print("게임을 종료합니다. 이용해주셔서 감사합니다.")
+        break
+    else:
+        continue
+
 
