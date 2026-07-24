@@ -14,6 +14,8 @@
 - 커밋은 최소 2개 이상 찍을 것
 '''
 
+import random
+
 #퀴즈 데이터베이스 (질문, 정답)
 quiz_list = [
     ("현재 내가 위치해 있는 폴더의 절대 경로를 출력해 주는 명령어는?", "pwd"),
@@ -28,3 +30,26 @@ quiz_list = [
     ("vi로 생성한 txt에서 작성 중인 내용을 저장하고 종료하는 명령어는?" , ":wq"),
     ("\'kh\' 폴더 안에 있는 \'hello.txt\' 파일을 \'/content/kh2\' 폴더 내부로 이동시키는 명령어를 작성하세요" , "mv hello.txt /content/kh2")
 ]
+
+count = 0
+score = 0
+
+print("리눅스 명령어 퀴즈 게임을 시작합니다! 야호~")
+print()
+while count <3:
+
+    data = random.choice(quiz_list)
+
+    qui01 = data[0]
+    ans =data[1]
+
+    print(qui01)
+    answer = input("정답:").lower()
+
+    if ans == answer:
+        print("정답")
+        count += 1
+        score += 1
+    else :
+        print(f"틀렸습니다. 정답은 \"{ans}\" 입니다.")
+    count += 1
