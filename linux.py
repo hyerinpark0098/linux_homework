@@ -31,28 +31,30 @@ quiz_list = [
     ("\'kh\' 폴더 안에 있는 \'hello.txt\' 파일을 \'/content/kh2\' 폴더 내부로 이동시키는 명령어를 작성하세요" , "mv hello.txt /content/kh2")
 ]
 
-count = 0
-score = 0
+while True:
 
-print("리눅스 명령어 퀴즈 게임을 시작합니다! 야호~")
-print()
-while count <3:
+    count = 0
+    score = 0
 
-    data = random.choice(quiz_list)
+    print("리눅스 명령어 퀴즈 게임을 시작합니다! 야호~")
+    print()
+    while count <3:
 
-    qui01 = data[0]
-    ans =data[1]
+        data = random.choice(quiz_list)
 
-    print(qui01)
-    answer = input("정답:").lower()
+        qui01 = data[0]
+        ans =data[1]
 
-    if ans == answer:
-        print("정답")
+        print(qui01)
+        answer = input("정답:").lower()
+
+        if ans == answer:
+            print("정답")
+            count += 1
+            score += 1
+        else :
+            print(f"틀렸습니다. 정답은 \"{ans}\" 입니다.")
         count += 1
-        score += 1
-    else :
-        print(f"틀렸습니다. 정답은 \"{ans}\" 입니다.")
-    count += 1
 
     if score == 0 :
         grade = "F"
@@ -66,3 +68,6 @@ while count <3:
     print("퀴즈가 끝났습니다. 고생하셨습니다!")
     print(f"총 3문제 중 \"{score}\"문제를 맞췄습니다")
     print (f"{score}문제를 맞춰 당신은 \"{grade}\"등급 입니다.")
+
+    again = input("게임을 그만하시겠습니까?[yes or no] :").lower()
+
